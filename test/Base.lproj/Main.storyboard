@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penguin" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-Zf-2Zt">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5t-OV-mmv" userLabel="bottomTextField">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nhw-8e-EwZ" userLabel="topTextField">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNg-Q4-Wy3">
+                                <rect key="frame" x="16" y="275" width="50" height="50"/>
+                                <state key="normal" image="Camera-50">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vei-pN-c6J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTI-GV-q2u">
+                                <rect key="frame" x="16" y="217" width="50" height="50"/>
+                                <state key="normal" image="Add Image-50">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapAddImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xs0-LF-fwe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44D-QE-Zsq">
+                                <rect key="frame" x="16" y="333" width="50" height="50"/>
+                                <state key="normal" image="Save as-50">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSaveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UkD-Nw-zSN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVz-cM-oXb">
+                                <rect key="frame" x="16" y="159" width="50" height="50"/>
+                                <state key="normal" image="Back-50">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vd6-Di-88O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxY-3p-9mn">
+                                <rect key="frame" x="16" y="391" width="50" height="50"/>
+                                <state key="normal" image="Share-50">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapShareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2G-Mb-7XP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F5t-OV-mmv" firstAttribute="centerX" secondItem="nkO-Zf-2Zt" secondAttribute="centerX" id="1dV-Y5-S80"/>
+                            <constraint firstItem="MxY-3p-9mn" firstAttribute="leading" secondItem="44D-QE-Zsq" secondAttribute="leading" id="1oA-dw-VBd"/>
+                            <constraint firstItem="cVz-cM-oXb" firstAttribute="leading" secondItem="nTI-GV-q2u" secondAttribute="leading" id="CDH-DW-L8X"/>
+                            <constraint firstItem="nkO-Zf-2Zt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="CdR-ba-nRu"/>
+                            <constraint firstItem="fNg-Q4-Wy3" firstAttribute="leading" secondItem="Nhw-8e-EwZ" secondAttribute="leading" id="EBY-Gb-jr1"/>
+                            <constraint firstItem="44D-QE-Zsq" firstAttribute="leading" secondItem="fNg-Q4-Wy3" secondAttribute="leading" id="Epm-7Y-Dul"/>
+                            <constraint firstItem="44D-QE-Zsq" firstAttribute="top" secondItem="fNg-Q4-Wy3" secondAttribute="bottom" constant="8" symbolic="YES" id="GSk-Nq-yK1"/>
+                            <constraint firstItem="Nhw-8e-EwZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="28" id="Np3-fa-QFh"/>
+                            <constraint firstItem="nkO-Zf-2Zt" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Plg-UU-aQB"/>
+                            <constraint firstAttribute="bottom" secondItem="F5t-OV-mmv" secondAttribute="bottom" constant="20" symbolic="YES" id="YYW-NH-5vO"/>
+                            <constraint firstItem="F5t-OV-mmv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZfL-Pf-BUt"/>
+                            <constraint firstItem="fNg-Q4-Wy3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aVN-KQ-nrr"/>
+                            <constraint firstItem="Nhw-8e-EwZ" firstAttribute="trailing" secondItem="F5t-OV-mmv" secondAttribute="trailing" id="c4d-ES-fZU"/>
+                            <constraint firstItem="nTI-GV-q2u" firstAttribute="leading" secondItem="fNg-Q4-Wy3" secondAttribute="leading" id="dne-J1-i7t"/>
+                            <constraint firstItem="nkO-Zf-2Zt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eTY-FF-lh9"/>
+                            <constraint firstItem="MxY-3p-9mn" firstAttribute="top" secondItem="44D-QE-Zsq" secondAttribute="bottom" constant="8" symbolic="YES" id="g9l-3F-rf0"/>
+                            <constraint firstItem="Nhw-8e-EwZ" firstAttribute="leading" secondItem="F5t-OV-mmv" secondAttribute="leading" id="tbt-By-ybh"/>
+                            <constraint firstAttribute="trailing" secondItem="nkO-Zf-2Zt" secondAttribute="trailing" id="y09-ke-VwV"/>
+                            <constraint firstItem="fNg-Q4-Wy3" firstAttribute="top" secondItem="nTI-GV-q2u" secondAttribute="bottom" constant="8" symbolic="YES" id="y4N-BB-USL"/>
+                            <constraint firstItem="nTI-GV-q2u" firstAttribute="top" secondItem="cVz-cM-oXb" secondAttribute="bottom" constant="8" symbolic="YES" id="yfX-vK-HEZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addImageButton" destination="nTI-GV-q2u" id="7ZG-bM-5J6"/>
+                        <outlet property="backButton" destination="cVz-cM-oXb" id="IqP-tV-hYd"/>
+                        <outlet property="bottomTextField" destination="F5t-OV-mmv" id="9AK-ND-Kr9"/>
+                        <outlet property="cameraButton" destination="fNg-Q4-Wy3" id="dIJ-fl-ku2"/>
+                        <outlet property="imageView" destination="nkO-Zf-2Zt" id="bkO-lG-wm4"/>
+                        <outlet property="saveButton" destination="44D-QE-Zsq" id="r6H-zF-wWC"/>
+                        <outlet property="shareButton" destination="MxY-3p-9mn" id="qhf-Nk-6e8"/>
+                        <outlet property="topTextField" destination="Nhw-8e-EwZ" id="vnL-8P-t9d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="-388"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add Image-50" width="50" height="50"/>
+        <image name="Back-50" width="50" height="50"/>
+        <image name="Camera-50" width="50" height="50"/>
+        <image name="Save as-50" width="50" height="50"/>
+        <image name="Share-50" width="50" height="50"/>
+        <image name="penguin" width="640" height="826"/>
+    </resources>
+</document>
