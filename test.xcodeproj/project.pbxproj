@@ -13,6 +13,7 @@
 		0138EF4E1B904651008BC6DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0138EF4D1B904651008BC6DB /* Images.xcassets */; };
 		0138EF511B904651008BC6DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0138EF4F1B904651008BC6DB /* LaunchScreen.xib */; };
 		0138EF5D1B904651008BC6DB /* testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138EF5C1B904651008BC6DB /* testTests.swift */; };
+		0138EF671B927169008BC6DB /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0138EF661B927169008BC6DB /* MemeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0138EF561B904651008BC6DB /* testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0138EF5B1B904651008BC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0138EF5C1B904651008BC6DB /* testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTests.swift; sourceTree = "<group>"; };
+		0138EF661B927169008BC6DB /* MemeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				0138EF461B904651008BC6DB /* AppDelegate.swift */,
 				0138EF481B904651008BC6DB /* ViewController.swift */,
+				0138EF661B927169008BC6DB /* MemeTableViewController.swift */,
 				0138EF4A1B904651008BC6DB /* Main.storyboard */,
 				0138EF4D1B904651008BC6DB /* Images.xcassets */,
 				0138EF4F1B904651008BC6DB /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0138EF671B927169008BC6DB /* MemeTableViewController.swift in Sources */,
 				0138EF491B904651008BC6DB /* ViewController.swift in Sources */,
 				0138EF471B904651008BC6DB /* AppDelegate.swift in Sources */,
 			);

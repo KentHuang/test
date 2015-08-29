@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView? {
         didSet {
@@ -39,6 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizer
         saveButton.hidden = true
         shareButton.hidden = true
         
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,23 +64,33 @@ class ViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizer
     // MARK: Keyboard
     
     func keyboardWillShow(notification: NSNotification) {
-        if bottomTextField.isFirstResponder() {
+        if bottomTextField.isFirstResponder() && self.view.frame.origin.y == 0 { // sometimes more than one notifs are sent
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(keyboardAnimationDuration(notification))
             UIView.setAnimationCurve(keyboardAnimationCurve(notification))
             self.view.frame.origin.y -= keyboardHeight(notification)
             UIView.commitAnimations()
         }
+        
+        if backButton.hidden == false { // hide all buttons
+            self.fadeButtons([backButton, addImageButton, cameraButton, saveButton, shareButton])
+        }
+        
+        let recognizer = imageView?.gestureRecognizers?.first as! UIGestureRecognizer
+        recognizer.enabled = false
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if bottomTextField.isFirstResponder() {
+        if bottomTextField.isFirstResponder() && self.view.frame.origin.y != 0 {
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(keyboardAnimationDuration(notification))
             UIView.setAnimationCurve(keyboardAnimationCurve(notification))
             self.view.frame.origin.y += keyboardHeight(notification)
             UIView.commitAnimations()
         }
+        
+        let recognizer = imageView?.gestureRecognizers?.first as! UIGestureRecognizer
+        recognizer.enabled = true
     }
     
     func keyboardHeight(notification: NSNotification) -> CGFloat {
@@ -127,7 +138,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizer
         return textField.resignFirstResponder()
     }
     
-    // Buttons
+    // MARK: Buttons
     
     func toggleButtons() {
         self.fadeButtons([backButton, addImageButton, cameraButton, saveButton, shareButton])
@@ -140,23 +151,39 @@ class ViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizer
     }
     
     @IBAction func tapBackButton(sender: UIButton) {
-        println("back")
+//        println("back")
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func tapAddImageButton(sender: AnyObject) {
-        println("add")
+//        println("add")
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(controller, animated: true, completion: nil)
     }
 
     @IBAction func tapCameraButton(sender: AnyObject) {
-        println("camera")
+//        println("camera")
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = UIImagePickerControllerSourceType.Camera
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func tapSaveButton(sender: AnyObject) {
-        println("save")
+//        println("save")
     }
     
     @IBAction func tapShareButton(sender: AnyObject) {
-        println("share")
+//        println("share")
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.imageView!.image = image
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
 }
